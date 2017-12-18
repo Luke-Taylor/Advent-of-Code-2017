@@ -7,3 +7,12 @@ Z:\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent 
 Z:\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.exe
 Z:\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.xml
 Z:\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.pdb
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\bin\Debug\Advent Of Code 2017.exe.config
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.exe
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.xml
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.pdb
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\bin\Debug\Advent Of Code 2017.exe
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\bin\Debug\Advent Of Code 2017.pdb
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\bin\Debug\Advent Of Code 2017.xml
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent_Of_Code_2017.Resources.resources
+C:\Users\Luke\Documents\Visual Studio 2017\Projects\Advent-of-Code-2017\Advent Of Code 2017\Advent Of Code 2017\obj\Debug\Advent Of Code 2017.vbproj.GenerateResource.Cache

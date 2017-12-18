@@ -5,9 +5,12 @@ Module DayLoader
     Sub Main()
         Dim dayNo As Integer = -1
         Dim part As String = "?"
+        Dim input As String
+        Dim _input As String = "."
+        Dim useInput As String = "?"
+        Dim inputType As String = ""
 
         Dim day As Day
-        Dim input As String
         Dim key As System.ConsoleKeyInfo
         Dim solution As String
 
@@ -27,29 +30,50 @@ Module DayLoader
                 End While
 
                 'TODO: reflection
-                day = New Day1()
+                day = New Day2()
                 Console.WriteLine()
                 Console.WriteLine(day.GetText(part))
                 Console.WriteLine()
 
-                input = day.GetInput(part)
+                Console.WriteLine("Use preset Puzzle Input? [Y]/[N]:")
+                useInput = Console.ReadLine().ToLower()
 
-                If (String.IsNullOrWhiteSpace(input)) Then
+                While (Not useInput = "y" And Not useInput = "n")
+                    Console.WriteLine("Invalid input. Do you wish to use the preset Puzzle Input? [Y]/[N]:")
+                    useInput = Console.ReadLine().ToLower()
+                End While
+
+                input = ""
+
+                If (String.IsNullOrWhiteSpace(day.GetInput(part)) Or useInput = "n") Then
                     Console.WriteLine("Please enter the Puzzle Input:")
                     key = Console.ReadKey(True)
 
-                    If (key.Key = ConsoleKey.V And (key.Modifiers And ConsoleModifiers.Control) = ConsoleModifiers.Control) Then
+                    If (key.Key = ConsoleKey.V AndAlso (key.Modifiers And ConsoleModifiers.Control) = ConsoleModifiers.Control) Then
                         If Clipboard.ContainsText Then
                             input = Clipboard.GetText
                         Else
                             Console.Write(key.KeyChar)
                         End If
+                    Else
+                        Console.Write(key.KeyChar)
                     End If
 
                     If (IsNothing(input) Or input = "v" Or input = "") Then
-                        input = Console.ReadLine()
+                        inputType = day.GetInputType(part)
+
+                        If (inputType = "single-line") Then
+                            input = Console.ReadLine()
+                        ElseIf (inputType = "multiline") Then
+                            While (Not String.IsNullOrWhiteSpace(_input))
+                                Console.WriteLine("Please enter the next line of puzzle input:")
+                                _input = Console.ReadLine()
+                                input += _input + vbCrLf
+                            End While
+                        End If
                     End If
                 Else
+                    input = day.GetInput(part)
                     Console.WriteLine("Puzzle Input is " + input)
                 End If
 
@@ -59,6 +83,7 @@ Module DayLoader
                     solution = day.PartB(input)
                 End If
 
+                Console.WriteLine()
                 Console.WriteLine("Puzzle solution is " + solution)
                 Console.WriteLine()
             End While
