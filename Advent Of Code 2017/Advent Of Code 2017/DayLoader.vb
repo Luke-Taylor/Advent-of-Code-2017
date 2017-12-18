@@ -9,6 +9,7 @@ Module DayLoader
         Dim day As Day
         Dim input As String
         Dim key As System.ConsoleKeyInfo
+        Dim solution As String
 
         Try
             While (True)
@@ -27,27 +28,39 @@ Module DayLoader
 
                 'TODO: reflection
                 day = New Day1()
+                Console.WriteLine()
+                Console.WriteLine(day.GetText(part))
+                Console.WriteLine()
 
-                Console.WriteLine("Please enter the Puzzle Input:")
-                key = Console.ReadKey(True)
+                input = day.GetInput(part)
 
-                If (key.Key = ConsoleKey.V And (key.Modifiers And ConsoleModifiers.Control) = ConsoleModifiers.Control) Then
-                    If Clipboard.ContainsText Then
-                        input = Clipboard.GetText
-                    Else
-                        Console.Write(key.KeyChar)
+                If (String.IsNullOrWhiteSpace(input)) Then
+                    Console.WriteLine("Please enter the Puzzle Input:")
+                    key = Console.ReadKey(True)
+
+                    If (key.Key = ConsoleKey.V And (key.Modifiers And ConsoleModifiers.Control) = ConsoleModifiers.Control) Then
+                        If Clipboard.ContainsText Then
+                            input = Clipboard.GetText
+                        Else
+                            Console.Write(key.KeyChar)
+                        End If
                     End If
-                End If
 
-                If (IsNothing(input) Or input = "v" Or input = "") Then
-                    input = Console.ReadLine()
+                    If (IsNothing(input) Or input = "v" Or input = "") Then
+                        input = Console.ReadLine()
+                    End If
+                Else
+                    Console.WriteLine("Puzzle Input is " + input)
                 End If
 
                 If (part = "a") Then
-                    Console.WriteLine(day.PartA(input))
+                    solution = day.PartA(input)
                 Else
-                    Console.WriteLine(day.PartB(input))
+                    solution = day.PartB(input)
                 End If
+
+                Console.WriteLine("Puzzle solution is " + solution)
+                Console.WriteLine()
             End While
 
 
