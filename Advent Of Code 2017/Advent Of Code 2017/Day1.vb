@@ -36,10 +36,13 @@
 
         Dim data As New CircularArray
         Dim chars As Char()
+        Dim intermediate As List(Of Char)
 
         Try
             chars = PuzzleInput.ToCharArray()
-            data.Objects.AddRange(chars)
+            intermediate = New List(Of Char)
+            intermediate.AddRange(chars)
+            data.Objects = intermediate.Select(Function(f) CType(f, Object)).ToList
 
             For i As Integer = 0 To data.Length
                 If (Integer.TryParse(data.At(i).ToString(), current)) Then
