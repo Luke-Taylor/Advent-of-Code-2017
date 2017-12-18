@@ -16,6 +16,7 @@
                     If current = previous Then
                         total += current
                     End If
+                    previous = current
                 End If
             Next
 
@@ -30,6 +31,27 @@
     End Function
 
     Public Overrides Function PartB(PuzzleInput As String) As String
-        Return ""
+        Dim total As Integer = 0
+        Dim current As Integer
+
+        Dim data As New CircularArray
+        Dim chars As Char()
+
+        Try
+            chars = PuzzleInput.ToCharArray()
+            data.Objects.AddRange(chars)
+
+            For i As Integer = 0 To data.Length
+                If (Integer.TryParse(data.At(i).ToString(), current)) Then
+                    If (current = Integer.Parse(data.At(i + (data.Length / 2)))) Then
+                        total += current
+                    End If
+                End If
+            Next
+
+            Return total.ToString()
+        Catch ex As Exception
+            Throw New Exception("Error calculating answer to part B", ex)
+        End Try
     End Function
 End Class

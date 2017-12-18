@@ -67,6 +67,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircularArray.vb" />
     <Compile Include="Day.vb" />
     <Compile Include="Day1.vb" />
     <Compile Include="DayLoader.vb" />
