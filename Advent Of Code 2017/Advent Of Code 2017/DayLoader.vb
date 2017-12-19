@@ -15,6 +15,9 @@ Module DayLoader
         Dim solution As String
 
         Try
+            Console.WriteLine("The night before Christmas, one of Santa's Elves calls you in a panic. 'The printer's broken! We can't print the Naughty or Nice List!' By the time you make it to sub-basement 17, there are only a few minutes until midnight. 'We have a big problem,' she says; 'there must be almost fifty bugs in this system, but nothing else can print The List. Stand in this square, quick! There's no time to explain; if you can convince them to pay you in stars, you'll be able to--' She pulls a lever and the world goes blurry." + vbCrLf _
+                              + "When your eyes can focus again, everything seems a lot more pixelated than before. She must have sent you inside the computer! You check the system clock: 25 milliseconds until midnight. With that much time, you should be able to collect all fifty stars by December 25th.)" + vbCrLf)
+
             While (True)
                 Console.WriteLine("Please enter a day (1-24):")
                 While (Not Integer.TryParse(Console.ReadLine(), dayNo) Or dayNo < 0 Or dayNo > 24)
@@ -74,7 +77,7 @@ Module DayLoader
                     End If
                 Else
                     input = day.GetInput(part)
-                    Console.WriteLine("Puzzle Input is " + input)
+                    'Console.WriteLine("Puzzle Input is " + input)
                 End If
 
                 If (part = "a") Then
