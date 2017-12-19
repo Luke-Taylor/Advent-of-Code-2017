@@ -10,3 +10,5 @@ Code samples to solve the advent of code challenges from http://adventofcode.com
 **Day 1: A and B**
 
 **Day 2: A and B**
+
+**Day 3: A and B**
