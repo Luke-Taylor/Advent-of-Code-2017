@@ -70,7 +70,9 @@
     <Compile Include="CircularArray.vb" />
     <Compile Include="Day.vb" />
     <Compile Include="Day1.vb" />
+    <Compile Include="Day19.vb" />
     <Compile Include="Day2.vb" />
+    <Compile Include="Day3.vb" />
     <Compile Include="DayLoader.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
