@@ -310,6 +310,94 @@
     End Function
 
     Public Overrides Function PartB(PuzzleInput As String) As String
+        Dim lines As List(Of String)
+        Dim letters As String = ""
+        Dim x As Integer = 0
+        Dim y As Integer = 1
+        Dim currentWire As String = "|"
+        Dim done As Boolean = False
+        Dim dir As Integer = 0 '0 = down, 1 = right, 2 = up, 3 = left
+        Dim steps As Integer = 0
 
+        Try
+            lines = ParseInput(PuzzleInput)
+
+            x = lines(0).IndexOf("|")
+            While (Not done)
+                steps += 1
+                currentWire = lines(y)(x)
+
+                Select Case (currentWire)
+
+                    Case "|"
+                        If (dir = 0) Then
+                            y += 1
+                        ElseIf (dir = 2) Then
+                            y -= 1
+                        Else
+                            If (Not lines(y)(x - 1) = " " And dir = 3) Then
+                                x -= 1
+                            ElseIf (Not lines(y)(x + 1) = " " And dir = 1) Then
+                                x += 1
+                            End If
+                        End If
+
+                    Case "+"
+                        If (dir = 0 Or dir = 2) Then
+                            If (Not lines(y)(x + 1) = " ") Then
+                                dir = 1
+                                x += 1
+                            ElseIf (Not lines(y)(x - 1) = " ") Then
+                                dir = 3
+                                x -= 1
+                            End If
+                        Else
+                            If (Not lines(y - 1)(x) = " ") Then
+                                dir = 2
+                                y -= 1
+                            ElseIf (Not lines(y + 1)(x) = " ") Then
+                                dir = 0
+                                y += 1
+                            End If
+                        End If
+
+                    Case "-"
+                        If (dir = 1) Then
+                            x += 1
+                        ElseIf (dir = 3) Then
+                            x -= 1
+                        Else
+                            If (Not lines(y + 1)(x) = " " And Not dir = 2) Then
+                                y += 1
+                                dir = 0
+                            ElseIf (Not lines(y - 1)(x) = " " And Not dir = 0) Then
+                                y -= 1
+                                dir = 2
+                            End If
+                        End If
+
+                    Case " "
+                        done = True
+
+                    Case Else
+                        letters += currentWire
+
+                        If (dir = 0) Then
+                            y += 1
+                        ElseIf (dir = 1) Then
+                            x += 1
+                        ElseIf (dir = 2) Then
+                            y -= 1
+                        ElseIf (dir = 3) Then
+                            x -= 1
+                        End If
+
+                End Select
+            End While
+
+            Return steps
+        Catch ex As Exception
+            Throw New Exception("Error getting solution for part A", ex)
+        End Try
     End Function
 End Class
