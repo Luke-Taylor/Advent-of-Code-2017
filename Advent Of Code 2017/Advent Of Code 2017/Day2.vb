@@ -123,7 +123,7 @@
         End Try
     End Function
 
-    Protected Function ParseInput(Input As String) As List(Of List(Of String))
+    Private Function ParseInput(Input As String) As List(Of List(Of String))
         Dim lines As New List(Of List(Of String))
         Dim currLine As String()
         Dim current As String()

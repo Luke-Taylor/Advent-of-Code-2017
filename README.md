@@ -13,4 +13,34 @@ Code samples to solve the advent of code challenges from http://adventofcode.com
 
 **Day 3: A and B**
 
+**Day 4: A and B**
+
+Day 5
+
+Day 6
+
+Day 7
+
+Day 8
+
+Day 9
+
+Day 10
+
+Day 11
+
+Day 12
+
+Day 13
+
+Day 14
+
+Day 15
+
+Day 16
+
+Day 17
+
+Day 18
+
 **Day 19: A and B**
