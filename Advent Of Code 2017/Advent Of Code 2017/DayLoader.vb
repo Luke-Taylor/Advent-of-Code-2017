@@ -30,7 +30,7 @@ Module DayLoader
                 End While
 
                 'TODO: reflection
-                day = New Day19()
+                day = New Day4()
                 Console.WriteLine()
                 Console.WriteLine(day.GetText(part))
                 Console.WriteLine()
