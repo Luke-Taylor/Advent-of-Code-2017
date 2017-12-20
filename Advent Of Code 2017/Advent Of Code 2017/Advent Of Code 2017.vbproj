@@ -67,8 +67,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day6.vb" />
+    <Compile Include="Day7.vb" />
     <Compile Include="Helper Classes\CircularArray.vb" />
-    <Compile Include="Day.vb" />
+    <Compile Include="Helper Classes\Day.vb" />
     <Compile Include="Day1.vb" />
     <Compile Include="Day19.vb" />
     <Compile Include="Day2.vb" />
@@ -76,6 +78,7 @@
     <Compile Include="Day4.vb" />
     <Compile Include="Day5.vb" />
     <Compile Include="Helper Classes\DayLoader.vb" />
+    <Compile Include="Helper Classes\Node.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -115,6 +118,7 @@
   <ItemGroup>
     <Content Include="Inputs\Day4.txt" />
     <Content Include="Inputs\Day5.txt" />
+    <Content Include="Inputs\Day7.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

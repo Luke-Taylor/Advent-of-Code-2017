@@ -19,7 +19,7 @@ Code samples to solve the advent of code challenges from http://adventofcode.com
 
 Day 6
 
-Day 7
+**Day 7: A**
 
 Day 8
 
