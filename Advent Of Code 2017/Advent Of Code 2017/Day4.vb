@@ -26,7 +26,7 @@
         Dim failed As Boolean
 
         Try
-            phrases = ParseInput(PuzzleInput)
+            phrases = ParseInputWithTabsOrSpaces(PuzzleInput)
 
             For Each line As List(Of String) In phrases
                 failed = False
@@ -65,7 +65,7 @@
         Dim word2 As Char()
 
         Try
-            phrases = ParseInput(PuzzleInput)
+            phrases = ParseInputWithTabsOrSpaces(PuzzleInput)
 
             For Each line As List(Of String) In phrases
                 failed = False
@@ -103,28 +103,6 @@
             Return valid.Count()
         Catch ex As Exception
             Throw New Exception("Error getting solution for Part B", ex)
-        End Try
-    End Function
-
-    Private Function ParseInput(Input As String) As List(Of List(Of String))
-        Dim lines As New List(Of List(Of String))
-        Dim currLine As String()
-        Dim current As String()
-        Dim items As List(Of String)
-
-        Try
-            currLine = Input.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
-
-            For i As Integer = 0 To currLine.Count - 1
-                items = New List(Of String)
-                current = currLine(i).Split(New Char() {" ", vbTab}, StringSplitOptions.RemoveEmptyEntries)
-                items.AddRange(current)
-                lines.Add(items)
-            Next
-
-            Return lines
-        Catch ex As Exception
-            Throw New Exception("Error parsing input", ex)
         End Try
     End Function
 End Class

@@ -46,7 +46,7 @@
         Dim lowest As Integer = Integer.MaxValue
 
         Try
-            lines = ParseInput(PuzzleInput)
+            lines = ParseInputWithTabsOrSpaces(PuzzleInput)
 
             For i As Integer = 0 To lines.Count - 1
                 highest = lines(i)(0)
@@ -87,7 +87,7 @@
         Dim lineDone As Boolean
 
         Try
-            lines = ParseInput(PuzzleInput)
+            lines = ParseInputWithTabsOrSpaces(PuzzleInput)
 
             For i As Integer = 0 To lines.Count - 1
                 lineDone = False
@@ -120,28 +120,6 @@
             Return total.ToString()
         Catch ex As Exception
             Throw New Exception("Error getting solution for part B", ex)
-        End Try
-    End Function
-
-    Private Function ParseInput(Input As String) As List(Of List(Of String))
-        Dim lines As New List(Of List(Of String))
-        Dim currLine As String()
-        Dim current As String()
-        Dim items As List(Of String)
-
-        Try
-            currLine = Input.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
-
-            For i As Integer = 0 To currLine.Count - 1
-                items = New List(Of String)
-                current = currLine(i).Split(New Char() {" ", vbTab}, StringSplitOptions.RemoveEmptyEntries)
-                items.AddRange(current)
-                lines.Add(items)
-            Next
-
-            Return lines
-        Catch ex As Exception
-            Throw New Exception("Error parsing input", ex)
         End Try
     End Function
 End Class
