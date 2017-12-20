@@ -74,6 +74,7 @@
     <Compile Include="Day2.vb" />
     <Compile Include="Day3.vb" />
     <Compile Include="Day4.vb" />
+    <Compile Include="Day5.vb" />
     <Compile Include="DayLoader.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -113,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Day4.txt" />
+    <Content Include="Day5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

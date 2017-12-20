@@ -2,13 +2,7 @@
     Inherits Day
 
     Public Overrides Function GetInput(Part As String) As String
-        Dim reader As String
-        Try
-            reader = My.Computer.FileSystem.ReadAllText("../../Day4.txt")
-            Return reader
-        Catch ex As Exception
-            Throw New Exception("Error getting Puzzle Input", ex)
-        End Try
+        Return LoadInputFromFile("Day4.txt")
     End Function
 
     Public Overrides Function GetInputType(Part As String) As String

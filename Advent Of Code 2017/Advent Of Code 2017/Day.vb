@@ -15,12 +15,22 @@
             currLine = Input.Split(ControlChars.CrLf.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
 
             For i As Integer = 0 To currLine.Count - 1
-                lines.AddRange(currLine)
+                lines.Add(currLine(i))
             Next
 
             Return lines
         Catch ex As Exception
             Throw New Exception("Error parsing input", ex)
+        End Try
+    End Function
+
+    Protected Function LoadInputFromFile(File As String) As String
+        Dim reader As String
+        Try
+            reader = My.Computer.FileSystem.ReadAllText("../../" + File)
+            Return reader
+        Catch ex As Exception
+            Throw New Exception("Error getting Puzzle Input", ex)
         End Try
     End Function
 End Class

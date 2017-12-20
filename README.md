@@ -15,7 +15,7 @@ Code samples to solve the advent of code challenges from http://adventofcode.com
 
 **Day 4: A and B**
 
-Day 5
+**Day 5: A and B**
 
 Day 6
 
@@ -44,3 +44,5 @@ Day 17
 Day 18
 
 **Day 19: A and B**
+
+Day 20
