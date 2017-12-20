@@ -17,9 +17,9 @@ Code samples to solve the advent of code challenges from http://adventofcode.com
 
 **Day 5: A and B**
 
-Day 6
+~~Day 6~~
 
-**Day 7: A**
+**Day 7: A** ~~ and B~~
 
 Day 8
 
